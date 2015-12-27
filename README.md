@@ -4,17 +4,17 @@ This application has been developed by [my-self](https://www.linkedin.com/in/ale
 
 # Description
 The code is composed by three files:
- - '''configuration.php.inc''' To configure main options.
- - '''funciones.php.inc''' With the functions to process the query, perform the operations into the file system and create the valid response.
- - '''phphile.php''' Http callable script. Check the query parameters and session to detect any non-valid behaviour from the user. If it's all ok pass the control to the functions file.
+ - **configuration.php.inc** To configure main options.
+ - **funciones.php.inc** With the functions to process the query, perform the operations into the file system and create the valid response.
+ - **phphile.php** Http callable script. Check the query parameters and session to detect any non-valid behaviour from the user. If it's all ok pass the control to the functions file.
 
 The check list for accept a query is:
- - '''format''' parameter is mandatory and must contain a valid format (XML, JSON or FILE).
- - The session '''phpidesession''' must exist to be sure that is an authorized user.
- - '''path''' and '''operation''' parameters are mandatory.
- - '''operation''' parameter must be one of the valid operations values defined at '''configuration.php.inc'''.
- - '''path''' parameter cannot contain two points ("..") in order to avoid to get/manage files upper than the root folder level configured into '''configuration.php.inc'''. And this parameter cannot contain double slash ("//") neither.
- - First character for '''path''' parameter must be a slash ("/").
+ - **format** parameter is mandatory and must contain a valid format (XML, JSON or FILE).
+ - The session **phpidesession** must exist to be sure that is an authorized user.
+ - **path** and **operation** parameters are mandatory.
+ - **operation** parameter must be one of the valid operations values defined at **configuration.php.inc**.
+ - **path** parameter cannot contain two points ("..") in order to avoid to get/manage files upper than the root folder level configured into **configuration.php.inc**. And this parameter cannot contain double slash ("//") neither.
+ - First character for **path** parameter must be a slash ("/").
 
 # Demo
 This project is used into some of my other projects:
@@ -23,7 +23,7 @@ This project is used into some of my other projects:
 If you use it at your project, let me know and I'll update this list.
 
 # Compilation / configuration
-This application is built in PHP. At the file '''configuration.php.inc''' you can configure some things:
+This application is built in PHP. At the file **configuration.php.inc** you can configure some things:
  - The valid/accepted operations
  - The root path to work at the server
 
