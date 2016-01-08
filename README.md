@@ -23,13 +23,16 @@ This project is used into some of my other projects:
 If you use it at your project, let me know and I'll update this list.
 
 # Compilation / configuration
-This application is built in PHP. At the file **configuration.php.inc** you can configure some things:
+This application is built in PHP plus AngularJS; but you can use only the part you need.
+
+For the server service, you'll need to copy the files into **php_scripts** at your server with PHP support. By the way at the file **configuration.php.inc** you can configure some things:
  - The valid/accepted operations
  - The root path to work at the server
 
-You just need to copy the files into your server with PHP support, 
+In order to get the AngularJS module to use into your web application, you just need to include the **target/phphile-x.x.x.js** and **target/phphile-x.x.x.css** into your dependencies and use it.
 
 # Changelog
+V1.1 Added AngularJS module to show/manage files at a web aplication.
 V1.0 First working version with the operations:
  - Save files (new or modify)
  - Get the list of files
