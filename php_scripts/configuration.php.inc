@@ -14,6 +14,5 @@ $validOperations[] = "createFolder";
 $validOperations[] = "saveFile";
 $validOperations[] = "deleteFile";
 
-// By default the root folder is the folder of the main script
-$rootFolder = getcwd();
+$rootFolder = getcwd() . "/..";
 ?>

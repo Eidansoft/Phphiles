@@ -26,10 +26,10 @@ if ($_REQUEST['format'] == "XML"){
 }
 
 // Check user is loggedin
-session_start();
-if ( !isset($_SESSION) || !isset($_SESSION['phpidesession']) ) {
-	endWithError($_REQUEST['format'], "User not logged in", 2);
-}
+// session_start();
+// if ( !isset($_SESSION) || !isset($_SESSION['phpidesession']) ) {
+// 	endWithError($_REQUEST['format'], "User not logged in", 2);
+// }
 
 // Check for mandatory params
 if ( ! isset($_REQUEST['path']) || ! isset($_REQUEST['operation']) ) { 
