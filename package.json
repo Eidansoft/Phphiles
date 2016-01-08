@@ -14,15 +14,15 @@
     "targetfolder": "target"
   },
   "scripts": {
-    "clean:build":    "rimraf ${npm_package_config_targetfolder} && rimraf ${npm_package_name}-${npm_package_version}-min.js && rimraf ${npm_package_name}-${npm_package_version}.css",
+    "clean:build":    "rimraf ${npm_package_config_targetfolder}",
     "clean:libs":     "rimraf ${npm_package_config_libfolder}",
     "clean:all":      "npm run clean:build && npm run clean:libs && rm -rf node_modules",
     "clean":          "npm run clean:all && rm -rf node_modules",
     "uncompress":     "extract-zip ${npm_package_config_zippedfolder}/angular-PubSub-master.zip ${npm_package_config_libfolder}/ && extract-zip ${npm_package_config_zippedfolder}/bootstrap-3.3.6-dist.zip ${npm_package_config_libfolder}/",
     "concatenate:js": "cat app/mainController.js > ${npm_package_config_targetfolder}/${npm_package_name}-${npm_package_version}.js && cat app/**/*.js >> ${npm_package_config_targetfolder}/${npm_package_name}-${npm_package_version}.js",
-    "minify:js":      "uglifyjs ${npm_package_config_targetfolder}/${npm_package_name}-${npm_package_version}.js -o ${npm_package_name}-${npm_package_version}-min.js -c",
+    "minify:js":      "uglifyjs ${npm_package_config_targetfolder}/${npm_package_name}-${npm_package_version}.js -o ${npm_package_config_targetfolder}/${npm_package_name}-${npm_package_version}-min.js -c",
     "compile:js":     "npm run concatenate:js",
-    "compile:css":    "cat css/styles.css > ${npm_package_name}-${npm_package_version}.css",
+    "compile:css":    "cat css/styles.css > ${npm_package_config_targetfolder}/${npm_package_name}-${npm_package_version}.css",
     "precompile":     "npm run clean:build && mkdir ${npm_package_config_targetfolder}",
     "compile":        "npm run compile:js && npm run compile:css",
     "test":           "echo \"Error: no test specified\" && exit 1"
