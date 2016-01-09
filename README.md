@@ -3,7 +3,9 @@ PHPhiles is an API solution created just for fun :-) to easily manage files at m
 This application has been developed by [my-self](https://www.linkedin.com/in/alejandro-d%C3%A9cimo-8b91b672) at my spare time. All sources are available at the [GIT repository](https://github.com/Eidansoft/Phphiles) on Github. Please feel free to try it out or giving me your feedback. I hope you enjoy.
 
 # Description
-The code is composed by three files:
+The code has two parts, first some php scripts to run at server; and by other hand an AngularJS module to easely show/manage the files. You can use both parts toghether or just the part you need.
+
+The php scripts are three files at **php_scripts** folder:
  - **configuration.php.inc** To configure main options.
  - **funciones.php.inc** With the functions to process the query, perform the operations into the file system and create the valid response.
  - **phphile.php** Http callable script. Check the query parameters and session to detect any non-valid behaviour from the user. If it's all ok pass the control to the functions file.
@@ -33,6 +35,7 @@ In order to get the AngularJS module to use into your web application, you just 
 
 # Changelog
 V1.1 Added AngularJS module to show/manage files at a web aplication.
+
 V1.0 First working version with the operations:
  - Save files (new or modify)
  - Get the list of files
