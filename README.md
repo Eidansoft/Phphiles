@@ -3,14 +3,23 @@ PHPhiles is an API solution created just for fun :-) to easily manage files at m
 This application has been developed by [my-self](https://www.linkedin.com/in/alejandro-d%C3%A9cimo-8b91b672) at my spare time. All sources are available at the [GIT repository](https://github.com/Eidansoft/Phphiles) on Github. Please feel free to try it out or giving me your feedback. I hope you enjoy.
 
 # Description
-The code has two parts, first some php scripts to run at server; and by other hand an AngularJS module to easely show/manage the files. You can use both parts toghether or just the part you need.
+The code has two parts, by one hand some php scripts to run at server; and by other hand an AngularJS module to easely show/manage the files. You can use both parts toghether or just the part you need.
 
 The php scripts are three files at **php_scripts** folder:
  - **configuration.php.inc** To configure main options.
  - **funciones.php.inc** With the functions to process the query, perform the operations into the file system and create the valid response.
  - **phphile.php** Http callable script. Check the query parameters and session to detect any non-valid behaviour from the user. If it's all ok pass the control to the functions file.
 
-The check list for accept a query is:
+By default the session control is commented, so if you want to use it you'll need to un-comment the lines following lines, and may be adapt to your needs:
+```
+// Check user is loggedin
+session_start();
+if ( !isset($_SESSION) || !isset($_SESSION['phpidesession']) ) {
+	endWithError($_REQUEST['format'], "User not logged in", 2);
+}
+```
+
+The check list at **phphile.php** for accept a query is:
  - **format** parameter is mandatory and must contain a valid format (XML, JSON or FILE).
  - The session **phpidesession** must exist to be sure that is an authorized user.
  - **path** and **operation** parameters are mandatory.
@@ -24,6 +33,8 @@ This project is used into some of my other projects:
 
 If you use it at your project, let me know and I'll update this list.
 
+By the way you will find a simple test page at **test** folder, you can easely follow it to know how use it at your project.
+
 # Compilation / configuration
 This application is built in PHP plus AngularJS; but you can use only the part you need.
 
@@ -31,7 +42,7 @@ For the server service, you'll need to copy the files into **php_scripts** at yo
  - The valid/accepted operations
  - The root path to work at the server
 
-In order to get the AngularJS module to use into your web application, you just need to include the **target/phphile-x.x.x.js** and **target/phphile-x.x.x.css** into your dependencies and use it.
+In order to get the AngularJS module to use into your web application, you just need to include the **target/phphile-x.x.x.js** and **target/phphile-x.x.x.css** into your dependencies and use it. Please look at the **test** folder to see an example.
 
 # Changelog
 V1.1 Added AngularJS module to show/manage files at a web aplication.
@@ -44,7 +55,14 @@ V1.0 First working version with the operations:
  - Delete a file
 
 # Dependencies
+For server side:
  - PHP 5 >= 5.2.0
+
+For module at web application:
+ - [AngularJS](https://angularjs.org/)
+ - [JQuery](https://jquery.com/)
+ - [Bootstrap](http://getbootstrap.com/) js and css
+ - Angular [Pub-Sub](https://github.com/georapbox/angular-PubSub)
 
 
 # License
